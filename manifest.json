@@ -1,0 +1,21 @@
+{
+  "name": "L&M Properties",
+  "short_name": "L&M",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#b4b188",
+  "theme_color": "#a67c52",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "splash.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
