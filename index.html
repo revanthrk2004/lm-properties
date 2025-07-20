@@ -45,7 +45,7 @@
     <div class="hero-inner" data-aos="fade-up">
       <h1>Securing & De-risking Land Investments</h1>
       <p>Your trusted partner in identifying high-value development opportunities.</p>
-      <a href="#contact" class="btn-primary">Let's Talk</a>
+      <a href="#contact" class="btn-primary">Consult</a>
     </div>
   </section>
 
@@ -54,7 +54,12 @@
     <div class="container">
       <lord-icon src="https://cdn.lordicon.com/gqzfzudq.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>About Us</h2>
-      <p>We specialise in secure land and off-market sites with strong development potential. We simplify complex processes and unlock value others miss.</p>
+      <p>
+        At Linares & Murga Properties, we specialise in secure land and off-market sites with strong development potential. We work closely with Developers, Landowners, and Investors to identify and structure high return opportunities — always with planning, uplift, and risk in mind.
+      </p>
+      <p>
+        Our strength lies in simplifying complex processes and unlocking value others often miss. Whether you're looking to acquire, exit, or partner on a project, we bring insight, reliability, and a results-driven mindset to every deal. Let’s turn strategic land into real opportunities — together.
+      </p>
     </div>
   </section>
 
@@ -64,9 +69,18 @@
       <lord-icon src="https://cdn.lordicon.com/abwrkdvl.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>Featured Listings</h2>
       <div class="card-grid">
-        <div class="property-card">2 Beds | 2 Baths | 2 Cars – Wheelchair accessible</div>
-        <div class="property-card">2 Beds | 2 Baths | 1 Car</div>
-        <div class="property-card">2 Beds | 2 Baths | 1 Car</div>
+        <div class="property-card">
+          <img src="listing1.jpg" alt="Listing 1">
+          <p>2 Beds | 2 Baths | 2 Cars – Wheelchair accessible</p>
+        </div>
+        <div class="property-card">
+          <img src="listing2.jpg" alt="Listing 2">
+          <p>2 Beds | 2 Baths | 1 Car</p>
+        </div>
+        <div class="property-card">
+          <img src="listing3.jpg" alt="Listing 3">
+          <p>2 Beds | 2 Baths | 1 Car</p>
+        </div>
       </div>
     </div>
   </section>
@@ -85,12 +99,45 @@
     </div>
   </section>
 
-  <!-- Team -->
-  <section id="team" class="section section-dark text-center" data-aos="fade-up">
+<!-- Team -->
+<section id="team" class="section section-dark text-center" data-aos="fade-up">
+  <div class="container">
+    <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
+    <h2>Meet the Team</h2>
+    <p>Behind every opportunity is a dedicated team of professionals with experience in planning, investment, and land sourcing. We bring strategic insight, fast execution, and a hands-on approach to every project—making sure our clients receive not just deals, but real results.</p>
+
+    <div class="team-card single" data-aos="zoom-in">
+      <img src="team.jpg" alt="Founders of L&M Properties">
+      <div class="team-details">
+        <h3>Juan Linares & Antonio Murga</h3>
+        <p>Co-Founders | Land Acquisition & Investment Strategy</p>
+        <blockquote>"We don't just source deals — we deliver transformation."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section section-dark text-center" data-aos="fade-up">
     <div class="container">
-      <lord-icon src="https://cdn.lordicon.com/eszyyflr.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
-      <h2>Meet the Team</h2>
-      <p>Behind every opportunity is a dedicated team of professionals in planning, investment, and land sourcing.</p>
+      <h2>Client Testimonials</h2>
+      <div class="card-grid testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Working with Linares & Murga Property has been a game changer. Their team brought us a fully de-risked site with real uplift potential."</p>
+          <p><strong>James D.</strong><br>Property Developer</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"I've worked with various sourcing companies, but none delivered the consistency and precision that Linares & Murga brings."</p>
+          <p><strong>Amira K.</strong><br>Private Investor</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"As a landowner with no prior development experience, I appreciated how efficient and honest the team was. Their professionalism and integrity are unmatched."</p>
+          <p><strong>Richard M.</strong><br>Landowner</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -99,9 +146,7 @@
     <div class="container">
       <lord-icon src="https://cdn.lordicon.com/ldhlkhzj.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>From Our Blog</h2>
-      <div class="posts-grid" id="blog-posts">
-        <!-- Blog posts will be dynamically injected -->
-      </div>
+      <div class="posts-grid" id="blog-posts"></div>
     </div>
   </section>
 
@@ -146,7 +191,7 @@
       document.getElementById('navbar').classList.toggle('show');
     });
 
-    // Scroll bar logic
+    // Scroll progress bar
     window.onscroll = () => {
       const scrollBar = document.getElementById('scrollBar');
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
@@ -183,7 +228,12 @@
             title: "The Future of UK Land Investments",
             excerpt: "Trends shaping investment success in new regions.",
             link: "#"
-          }
+          },
+            {
+    "title": "How L&M Streamlines Planning Permissions",
+    "excerpt": "From zoning challenges to fast-tracking approval, here's how we simplify your journey.",
+    "link": "#"
+  }
         ]);
       });
   </script>
