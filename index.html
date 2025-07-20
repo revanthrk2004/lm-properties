@@ -20,6 +20,9 @@
     <a href="https://wa.me/YOURNUMBER" target="_blank">💬 Chat with us</a>
   </div>
 
+  <!-- Sticky CTA Button -->
+  <a href="#contact" class="sticky-cta">📩 Get in Touch</a>
+
   <!-- Header -->
   <header class="header">
     <div class="container flex spaced">
@@ -56,8 +59,8 @@
   </section>
 
   <!-- Listings -->
-  <section id="listings" class="section section-dark" data-aos="fade-up">
-    <div class="container text-center">
+  <section id="listings" class="section section-dark text-center" data-aos="fade-up">
+    <div class="container">
       <lord-icon src="https://cdn.lordicon.com/abwrkdvl.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>Featured Listings</h2>
       <div class="card-grid">
@@ -69,8 +72,8 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="section section-light" data-aos="fade-up">
-    <div class="container text-center">
+  <section id="projects" class="section section-light text-center" data-aos="fade-up">
+    <div class="container">
       <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>Ongoing Projects</h2>
       <div class="project-grid">
@@ -92,12 +95,12 @@
   </section>
 
   <!-- Blog -->
-  <section id="blog" class="section section-light" data-aos="fade-up">
-    <div class="container text-center">
+  <section id="blog" class="section section-light text-center" data-aos="fade-up">
+    <div class="container">
       <lord-icon src="https://cdn.lordicon.com/ldhlkhzj.json" trigger="loop" delay="1500" colors="primary:#c9b037" style="width:60px;height:60px"></lord-icon>
       <h2>From Our Blog</h2>
-      <div class="posts-grid">
-        <!-- Blog posts load from blog-posts.json -->
+      <div class="posts-grid" id="blog-posts">
+        <!-- Blog posts will be dynamically injected -->
       </div>
     </div>
   </section>
@@ -114,8 +117,8 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section section-light" data-aos="fade-up">
-    <div class="container text-center">
+  <section id="contact" class="section section-light text-center" data-aos="fade-up">
+    <div class="container">
       <h2>Contact Us</h2>
       <form class="contact-form">
         <input type="text" placeholder="Name" required>
@@ -143,31 +146,46 @@
       document.getElementById('navbar').classList.toggle('show');
     });
 
-    // Scroll progress bar
+    // Scroll bar logic
     window.onscroll = () => {
       const scrollBar = document.getElementById('scrollBar');
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       scrollBar.style.width = `${scrolled}%`;
     };
 
-    // Load blog posts
+    // Blog loading with fallback
+    function loadBlog(posts) {
+      const grid = document.getElementById('blog-posts');
+      grid.innerHTML = '';
+      posts.forEach(post => {
+        const div = document.createElement('div');
+        div.className = 'post-card';
+        div.innerHTML = `
+          <h3>${post.title}</h3>
+          <p>${post.excerpt}</p>
+          <a href="${post.link}">Read more →</a>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
     fetch('blog-posts.json')
       .then(res => res.json())
-      .then(posts => {
-        const grid = document.querySelector('.posts-grid');
-        grid.innerHTML = '';
-        posts.forEach(post => {
-          grid.innerHTML += `
-            <div class="post-card">
-              <h3>${post.title}</h3>
-              <p>${post.excerpt}</p>
-              <a href="${post.link}">Read more →</a>
-            </div>
-          `;
-        });
+      .then(loadBlog)
+      .catch(() => {
+        loadBlog([
+          {
+            title: "5 Secrets to Profitable Land Deals",
+            excerpt: "Discover how to identify off-market opportunities with rapid ROI.",
+            link: "#"
+          },
+          {
+            title: "The Future of UK Land Investments",
+            excerpt: "Trends shaping investment success in new regions.",
+            link: "#"
+          }
+        ]);
       });
   </script>
-
-
 </body>
 </html>

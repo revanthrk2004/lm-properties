@@ -163,6 +163,8 @@ a {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .post-card a {
+  display: inline-block;
+  margin-top: 1rem;
   color: #C9B037;
   font-weight: bold;
 }
@@ -204,6 +206,25 @@ a {
 }
 .floating-chat a {
   color: white;
+}
+
+/* Sticky CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #C9B037;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+.sticky-cta:hover {
+  background: #b09e2f;
 }
 
 /* Responsive Navigation */
